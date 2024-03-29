@@ -71,11 +71,11 @@ const main = async () => {
   }
   const editToken = await bot.getEditToken();
   const text = '*本页面为机器人生成的[[T:萌百视觉小说研究会|视研会]]成员30日内编辑数统计（主<code>(namespace=0)</code>、分类<code>(category:)</code>、模板<code>(template:)</code>、模块<code>(module:)</code>）\n*生成时间：{{subst:#time:Y年n月j日 (D) H:i (T)|||1}}｜{{subst:#time:Y年n月j日 (D) H:i (T)}}\n' +
-    '<div style="display: flex; flex-wrap: wrap; justify-content: center;">\n<div style="width: 100%; max-width: 600px; margin:0 3rem 1rem">\n' +
+    '<center>\n' +
     '{| class="wikitable sortable"\n' +
     '! 用户名 !! 30日编辑数\n|-\n' +
     editCountData.map(({ user, editCount }) => `| [[User:${user}|${user}]] || ${editCount}`).join('\n|-\n') +
-    '\n|}\n</div>\n</div>';//  提交到页面的内容
+    '\n|}\n</center>';//  提交到页面的内容
   await bot.request({
     action: 'edit',
     title,
